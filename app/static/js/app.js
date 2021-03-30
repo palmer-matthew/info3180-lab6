@@ -39,11 +39,15 @@ app.component('news-list', {
   name: 'NewsList',
   template: `
     <div class="news">
-      <h2>News</h2>
+      <h2 class='text-center'>News</h2>
       <ul class="news__list">
-        <li class="news__item">News item 1</li>
-        <li class="news__item">News item 2</li>
-        <li class="news__item">News item 3</li>
+        <li v-for="article in articles" class="news__item">
+          <div class='card'>
+            <p class='title'>{{ article.title }}</p>
+            <img v-bind:src=article.urlToImage alt="">
+            <p>{{ article.description }}</p>
+          </div>
+        </li>
       </ul>
     </div>
   `,
