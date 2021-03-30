@@ -47,6 +47,30 @@ app.component('news-list', {
       </ul>
     </div>
   `,
+  created() {
+
+    let apiKey = '';
+    let self = this;
+
+    fetch(`https://newsapi.org/v2/top-headlines?country=us`,
+    {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`
+      }
+    })
+    .then(response =>response.json())
+    .then(data => {
+      console.log(data);
+      self.articles = data.articles;
+    }).catch(error => {
+      console.log(error);
+    });
+  },
+  data(){
+    return {
+       articles: []
+    }
+  } 
 });
 
 app.component('app-footer', {
