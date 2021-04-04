@@ -5,3 +5,18 @@ body {
 footer  {
     padding-top: 20px;
 }
+
+.news__list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 30%;
+    padding: 10px 20px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-top: 5px solid #6CC280;
+}
